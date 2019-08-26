@@ -16,7 +16,7 @@ public class ExcelPOIUtils extends ExcelUtils {
 
 	}
 	@Override
-	public void exportExc(List list,String path) throws Exception{
+	public void exportExc(List list, String path) throws Exception{
 		if (ObjectUtils.isEmpty(list) || ObjectUtils.isEmpty(path)) {
 			return;
 		}
@@ -24,8 +24,9 @@ public class ExcelPOIUtils extends ExcelUtils {
 		HSSFSheet hssfSheet = hssfWorkbook.createSheet();
 		Class<T> excelClass;
 		Object obj;
+		setHead(list.get(0).getClass(),hssfSheet);
 		for(int i = 0; i < list.size(); i ++){
-			Row row = hssfSheet.createRow(i);
+			Row row = hssfSheet.createRow(i + 1);
 			
 			obj = list.get(i);
 			excelClass = (Class<T>) obj.getClass();
