@@ -35,10 +35,10 @@ public class ExcelPOIUtils extends ExcelUtils {
 
 		Field[] fields = class1.getDeclaredFields();
 		Field field;
-		for (int i = 0; i < rowNum; i++) {
+		for (int i = 1; i < rowNum; i++) {
 			Row row = sheet.getRow(i);
 			obj = class1.newInstance();
-			for (int j = 1; j < fields.length; j++) {
+			for (int j = 0; j < fields.length; j++) {
 				field = fields[j];
 				ExcelFiled excelFiled = field.getAnnotation(ExcelFiled.class);
 				Cell cell = row.getCell(excelFiled.colIndex());
