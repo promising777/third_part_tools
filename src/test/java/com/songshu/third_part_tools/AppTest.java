@@ -2,6 +2,7 @@ package com.songshu.third_part_tools;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.songshu.third_part_tools.excel.factory.ExcelFactory;
@@ -22,6 +23,8 @@ public class AppTest extends TestCase{
 			ExportVo exportVo = new ExportVo();
 			exportVo.setChannelName("刘滔");
 			exportVo.setGameName("萌仙途");
+			exportVo.setDate(new Date());
+			exportVo.setPrice(12.312412);
 			exportVos.add(exportVo);
 			if (exportVos.size() > 11) {
 				break;

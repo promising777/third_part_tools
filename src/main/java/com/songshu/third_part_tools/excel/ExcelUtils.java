@@ -1,15 +1,13 @@
 package com.songshu.third_part_tools.excel;
 
-import java.lang.reflect.Field;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.ss.formula.functions.T;
-import org.apache.poi.ss.usermodel.Row;
-
-import com.songshu.third_part_tools.ExcelFiled;
-
 public abstract class ExcelUtils {
+	
+	public SimpleDateFormat createDateFormat(String pattern){
+		return new SimpleDateFormat(pattern);
+	}
 	
 	public void importExc() throws Exception {
 	}
@@ -23,12 +21,4 @@ public abstract class ExcelUtils {
 	}
 	
 	
-	public void setHead(Class<? extends Object> class1,HSSFSheet hssfSheet) {
-		Field[] fieldHeads = class1.getDeclaredFields();
-		Row row = hssfSheet.createRow(0);
-		for (int i = 0; i < fieldHeads.length; i++) {
-			ExcelFiled excelFiled = fieldHeads[i].getAnnotation(ExcelFiled.class);
-			row.createCell(i).setCellValue(excelFiled.colName());
-		}
-	}
 }

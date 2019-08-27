@@ -26,5 +26,5 @@ public @interface ExcelFiled {
 	 * 默认 “yyyy-MM-dd HH:mm:ss”
 	 * @return
 	 */
-	String dateFormat() default "yyyy-MM-dd HH:mm:ss";
+	String dateFormat() default "";
 }
