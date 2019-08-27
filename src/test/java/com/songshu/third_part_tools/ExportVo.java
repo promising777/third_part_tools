@@ -1,11 +1,12 @@
 package com.songshu.third_part_tools;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import lombok.Data;
 
 @Data
-public class ExportVo {
+public class ExportVo implements Serializable{
 	@ExcelFiled(colName="游戏名称")
 	public String gameName;
 	@ExcelFiled(colName="渠道名称")
@@ -14,6 +15,5 @@ public class ExportVo {
 	public Date date;
 	@ExcelFiled(colName="金额",precision=2)
 	public double price;
-	
 	
 }

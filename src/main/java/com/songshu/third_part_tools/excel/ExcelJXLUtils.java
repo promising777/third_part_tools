@@ -1,15 +1,19 @@
 package com.songshu.third_part_tools.excel;
 
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
+
+import org.apache.poi.ss.formula.functions.T;
 
 public class ExcelJXLUtils extends ExcelUtils {
 	@Override
-	public void importExc() {
+	public <T> List<T> readExc(InputStream in,Class<T> class1) {
 		// TODO Auto-generated method stub
-
+		return null;
 	}
 	@Override
-	public void exportExc(List list,String path) {
+	public <T> void exportExc(OutputStream out, List<T> list) {
 		// TODO Auto-generated method stub
 
 	}

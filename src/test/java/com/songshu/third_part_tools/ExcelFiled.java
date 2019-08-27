@@ -27,4 +27,10 @@ public @interface ExcelFiled {
 	 * @return
 	 */
 	String dateFormat() default "";
+	
+	/**
+	 * 字段对应的列索引
+	 * @return
+	 */
+	int colIndex() default 0;
 }

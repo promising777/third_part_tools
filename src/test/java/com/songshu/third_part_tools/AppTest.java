@@ -1,9 +1,14 @@
 package com.songshu.third_part_tools;
 
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import org.apache.poi.util.StringUtil;
 
 import com.songshu.third_part_tools.excel.factory.ExcelFactory;
 import com.songshu.third_part_tools.excel.factory.ExcelPOIFactory;
@@ -17,7 +22,7 @@ public class AppTest extends TestCase{
 	
 	public static void main(String[] args) throws Exception {
 
-		long starTime = System.currentTimeMillis();
+		/*long starTime = System.currentTimeMillis();
 		List<ExportVo> exportVos = new ArrayList<ExportVo>();
 		while (true) {
 			ExportVo exportVo = new ExportVo();
@@ -31,8 +36,15 @@ public class AppTest extends TestCase{
 			}
 		}
 		ExcelFactory factory = new ExcelPOIFactory();
-		factory.produce().exportExc(exportVos, "H:\\导出.xls");
+		FileOutputStream out = new FileOutputStream(new File("H:\\导出.xls"));
+		factory.produce().exportExc(out,exportVos);
 		long endTime = System.currentTimeMillis();
-		System.out.println("导出耗时："+(endTime - starTime));
+		System.out.println("导出耗时："+(endTime - starTime));*/
+		
+		ExcelFactory factory = new ExcelPOIFactory();
+		FileInputStream in = new FileInputStream(new File("H:\\导出.xls"));
+		List<ExportAo> aos = factory.produce().readExc(in, ExportAo.class);
+		System.out.println(aos.size());
+		
 	}
 }
